@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-        stage("Run Tests") {
+        steps {
             post {
                always {
                     archiveArtifacts artifacts: 'output/**'
