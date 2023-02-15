@@ -14,10 +14,12 @@ pipeline {
             }
         }
 
-        post {
-            always {
-                archiveArtifacts artifacts: 'output/**'
-                bat "docker-compose down"
+        stage("Run Tests") {
+            post {
+               always {
+                    archiveArtifacts artifacts: 'output/**'
+                    bat "docker-compose down"
+               }
             }
         }
     }
